@@ -1,5 +1,4 @@
 <template>
-    <div>
       <div>
         <div v-if="subBreeds">
           <div>SubBreeds are:  {{subBreeds}} </div>
@@ -21,7 +20,6 @@
           <router-link to="/" class="link">Go Back</router-link>
         </div>
       </div>
-    </div>
 </template>
 
 <script>
