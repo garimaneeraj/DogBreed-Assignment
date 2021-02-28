@@ -2,23 +2,15 @@
 <div class="container-fluid">
   <div id="app">
     <header>
-      <b-navbar>
-        <ul>
+      <nav>
+        <ul class="navbar navbar-inverse">
           <li class="nav-item">
             <router-link class="nav-link" :to="{name: 'Home'}" exact>
             Dog-Breed
             </router-link>
           </li>
-          <li class="nav-item">
-            Search Dog-breeds
-             <div class="searchBar">
-             <input type="text" class="form-control"
-              v-model="search"> <button class="search-button"
-             @click="searchBreed()">Search</button>
-            </div>
-          </li>
         </ul>
-      </b-navbar>
+      </nav>
     </header>
     <main>
       <router-view/>
@@ -37,12 +29,6 @@ export default {
     };
   },
   methods: {
-    searchBreed() {
-      this.$store.state.searchText = this.search;
-      this.$router.push({
-        name: 'Search',
-      });
-    },
   },
 };
 </script>
@@ -56,22 +42,19 @@ body{
 }
 main{
   padding:30px ;
-
-  min-height: 500px;
-
 }
 
 header {
-  background-color: rgb(2, 2, 56);
+  background-color: rgb(6, 6, 139);
   color:oldlace;
-  margin: 0 auto;
+  width: 100%;
 }
 ul {
   padding: 3px;
   display: flex;
 }
 .nav-item {
-  display: inline-flex;
+  display: inline-block;
   padding: 5px 10px;
   font-size: 18px;
   border-right: 1px solid #bbb;
@@ -80,9 +63,6 @@ ul {
 .nav-link{
   text-decoration: none;
   color: inherit;
-}
-.router-link-active{
-  color:white;
 }
 
 .container{
@@ -96,13 +76,12 @@ ul {
     border-radius: 50px;
 }
 .search-button{
-  float: right;
+  float: left;
   padding: 10px;
   background: #2196F3;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
   cursor: pointer;
+  margin: 5px;
 }
 </style>
